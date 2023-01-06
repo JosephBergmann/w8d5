@@ -17,6 +17,6 @@ function goodSum(...args){
     return sum;
 }
 
-console.log(goodSum(1, 2, 3, 4) === 10);
+console.log(goodSum(1, 2, 3, 4) === 10); //
 console.log(goodSum(1, 2, 3, 4, 5) === 15);
 
