@@ -1,5 +1,5 @@
 Function.prototype.myBind = function(context, ...bindArgs){
-    return (...callArgs) => {
+    return function(...callArgs) {
         return this.apply(context, bindArgs.concat(callArgs));
     };
 }
