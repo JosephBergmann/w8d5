@@ -1,6 +1,15 @@
-Function.prototype.myBind = function(context, ...bindArgs){
-    return function(...callArgs) {
-        return this.apply(context, bindArgs.concat(callArgs));
+// Function.prototype.myBind = function(context, ...bindArgs){
+//     return function(...callArgs) {
+//         return this.apply(context, bindArgs.concat(callArgs));
+//     };
+// }
+
+Function.prototype.myBind = function(context){
+    const bindArgs = Array.from(arguments).slice(1);
+    const that = this;
+    return function() {
+        const callArgs = Array.from(arguments).slice(1);
+        return that.apply(context, bindArgs.concat(callArgs));
     };
 }
 
